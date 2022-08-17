@@ -275,11 +275,11 @@ class CombPurgedKFoldCV(BaseTimeSeriesCrossValidator):
             raise ValueError(f"K-fold cross-validation requires at least one train/test split by setting "
                              f"n_test_splits between 1 and n_splits - 1, got n_test_splits = {n_test_splits}.")
         self.n_test_splits = n_test_splits
-        if not isinstance(embargo_td, pd.Timedelta):
-            raise ValueError(f"The embargo time should be of type Pandas Timedelta. {embargo_td} of type "
-                             f"{type(embargo_td)} was passed.")
-        if embargo_td < pd.Timedelta(minutes=0):
-            raise ValueError(f"The embargo time should be positive, got embargo = {embargo_td}.")
+#         if not isinstance(embargo_td, pd.Timedelta):
+#             raise ValueError(f"The embargo time should be of type Pandas Timedelta. {embargo_td} of type "
+#                              f"{type(embargo_td)} was passed.")
+#         if embargo_td < pd.Timedelta(minutes=0):
+#             raise ValueError(f"The embargo time should be positive, got embargo = {embargo_td}.")
         self.embargo_td = embargo_td
 
     def split(self, X: pd.DataFrame, y: pd.Series = None,
